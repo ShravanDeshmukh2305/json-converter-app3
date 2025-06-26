@@ -6,6 +6,15 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "server" },
-    { "src": "/(.*)", "dest": "client" }
+    { 
+      "src": "/(.*)", 
+      "dest": "client",
+      "headers": {
+        "Cache-Control": "no-cache",
+        "X-Frame-Options": "DENY"
+      }
+    },
+    { "handle": "filesystem" },
+    { "src": ".*", "status": 200, "dest": "client/index.html" }
   ]
 }

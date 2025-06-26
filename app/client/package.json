@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "prebuild": "rimraf dist && npm install",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "vite",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.jsx"
   },
   "dependencies": {
     "axios": "^1.10.0",
@@ -23,6 +24,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
+    "rimraf": "^6.0.1",
     "sass": "^1.89.2",
     "vite": "^7.0.0"
   }
